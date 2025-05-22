@@ -1,0 +1,62 @@
+
+*{
+    margin: 0;          /* marge interieur*/
+    padding: O;            /* marge exterieur*/
+    box-sizing: border-box;
+    text-decoration: none;
+
+}
+body{
+    background-image: url()
+}
+
+.header{
+    display: flex;
+
+}
+
+.navLogo {
+    width: 20%;
+}
+
+
+ul li{
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    
+  }
+
+.navUl{
+    display: flex;
+    
+  }
+
+ a{
+        color: rgb(42, 83, 165);
+
+ }
+.luffyZorro{
+    width: 100px;
+    justify-content:center ;
+    
+}
+
+.oneP{
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    margin: 5em 25em 0em 25em;
+}
+
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
