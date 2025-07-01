@@ -13,22 +13,47 @@
                 <img class="navLogo" src="./images/LOGOO.jpg" alt="Logo">
             </div>
             <div>
-                <nav >
+                <nav>
                     <ul  class="navUl">
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Produits</a></li>
-                        <li><a href="#">Conatcts</a></li>
+                        <li><a href="./index.html">Accueil</a></li>
+                        <li><a href="./Link/Services.html">Services</a></li>
+                        <li><a href="./Link/produits.html">Produits</a></li>
+                        <li><a href="./Link/contact.html">Conatcts</a></li>
                     </ul>
                 </nav>
             </div>
-        </div> 
+        </div>
+        <!-- Menu Burger-->
+        <div class="menuToggle"> 
+            <nav class="mobilescreen">
+                <div title="Menu" id="menuToggle">
+                    <input type="checkbox">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    <ul id="menu">
+                        <li>
+                            <a href="#">Acceuil</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                       <li>
+                            <a href="#">Produit</a>
+                       </li>
+                        <li>
+                           <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section>
+        <!-- deux image -->
+        <section class="sectionImg"> 
             <div class="oneP">
-                
                 <div> 
                     <img class="luffyZorro" src="images/luffy.jpg" alt="Luffy">
                     <p> Image de luffy</p>
@@ -39,9 +64,9 @@
                 </div>
             </div>
         </section>
-
-        <section>
-            <table>
+        <!-- Tableaux -->
+        <section class="sectionTable"> 
+            <table class="table">
                 <tr>
                     <th>Societé</th>
                     <th>Contact</th>
@@ -65,9 +90,8 @@
             </table>
 
         </section>
-        <br> <br>
-        <section>
-            <p>Création formulaire</p>
+        <!-- Formulaire-->
+        <section> 
             <form method="get" action="">
                 <p>
                     <label for="prenom">Votre prénom :</label>
@@ -84,7 +108,6 @@
                    <input type="checkbox" name="ognion" id="ognion"> 
                    <label for="ognion">Ognion</label>
                 </p>
-
                 <p><!--Radio-->
                     Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br>
                     <input type="radio" name="age" value="moins15" id="moins15">
@@ -120,6 +143,29 @@
                 <input type="submit" value="Envoyer mon form">
             </form>
         </section>
+        <!-- Nouvelle section avec fade-in -->
+        <section id="fadein-section" class="fade-in"> 
+            <h2 class="fadeinColor">Exercice 10-4</h2>
+            <p > ce contenu apparait en fondu grace a une animation CSS.</p>
+        </section>
+
+        <!-- Nouvelle section avec zoom-rotate-in -->
+        <section class="zoom-rotate-in"> 
+            <h2 class="fadeinColor">Exercice 10-4 effet zoom et rotation</h2>
+            <p > ce contenu apparait avec un effet de zoom</p>
+        </section>
+
+        <!-- Bounce effect avec CSS -->
+        <section class=""> 
+            <button class="bounce">tuch me</button>   
+        </section>
+
+        <!-- SHAKE effect avec CSS -->
+        <section class=""> 
+            <button class="shake">tuch me</button>   
+        </section>
+
+
 
     </main>
 

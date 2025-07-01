@@ -6,53 +6,186 @@
     text-decoration: none;
 
 }
-body{
-    background-image: url()
-}
-
+/********************navigateur*************/
 .header{
     display: flex;
-
 }
 
-.navLogo {
-    width: 20%;
+h1{
+    text-align: center;
+    color: rgb(28, 28, 29);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    margin-top: 1em;
+}
+.menuToggle{
+    display: none;
 }
 
-
+/********************navigateur*************/
 ul li{
     padding: 10px;
     list-style-type: none;
     display: flex;
     
-  }
-
+}
+.navLogo {
+    width: 15%;
+}
 .navUl{
+    display: flex;  
+    font-size: 1.5em;
+    padding-top: 4%;  
+}
+a{
+    color: rgb(78, 79, 80);
+
+}
+a:hover {
+    color: #0080FF;
+}
+/********************Menu Burger************/
+.mobilescreen{
     display: flex;
-    
-  }
-
- a{
-        color: rgb(42, 83, 165);
-
- }
-.luffyZorro{
-    width: 100px;
-    justify-content:center ;
-    
+    justify-content: end;
 }
 
+#menuToggle
+{
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menuToggle input
+{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #010506;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 3px 0px;
+    transition: transform 0.2s cubic-bezier(0.77,0.2,0.05,1.0),
+    background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+    opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #517ee7;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg)     
+      scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+    opacity: 1;
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*This is the Menu part, which gets triggered by toggle*/
+#menu
+{
+    position: absolute;
+    width: 90vw;
+    height: 110vh;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    background: rgba(236, 240, 241, 0.97);;
+    list-style-type: none;
+    transform-origin: 0 0;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    text-align: center;
+
+}
+
+#menu li
+{
+    padding: 15px 0;
+    color: #000000;
+    list-style-type: none;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#menu li a {
+      color: #2074f2;
+      text-decoration: none;
+      text-transformation: uppercase;
+}
+
+#menu li a:hover {
+    color: #2C3E50;
+    text-decoration: none;
+}
+
+#menuToggle input:checked ~ ul
+{
+    transform: scale(1.0, 1.0);
+    opacity: 1;
+}
+
+/*****************Imagess*************/
 .oneP{
     display: flex;
-    justify-content: center;
+    align-items: center;
     justify-content: space-between;
-    margin: 5em 25em 0em 25em;
+    padding: 1% 40%;
+    
 }
-
+.luffyZorro{
+    width: 100px;  
+}
+/*****************Tableaux*************/
+.sectionTable{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding-top: 5%;
+}
 table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
 }
+/*****************Formulaire*************/
 form {
     display: flex;
     flex-direction: column;
@@ -60,3 +193,84 @@ form {
     align-items: center;
     margin-top: 2em;
 }
+
+
+@media screen and (max-width: 800px) {
+    .menuToggle{
+      display: block;
+    }
+    .header{
+        display: none;
+    }
+  }
+/*-------------Animation fade-in-----------------*/
+.fade-in {
+    width: 500px;
+    margin-top: 10em;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: fadeInMove 3s ease-out forwards;
+  }
+  .fadeinColor {
+    color: rgb(15, 95, 148);
+  }
+  
+  @keyframes fadeInMove {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  /*-------------zoom rotate in -----------------*/
+  .zoom-rotate-in {
+    width: 500px;
+    margin-top: 10em;
+    margin: 0 auto;
+    opacity: 0;
+    transform: scale(0.5) rotate(-360deg);
+    animation: zoomRotateIn 3s cubic-bezier(.68, -0.55, .27, 1.55) forwards;
+  }
+  @keyframes zoomRotateIn {
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+  /*-------------fin zoom rotate in effect-----------------*/
+  /*-------------Bounce effect avec CSS-----------------*/
+   .bounce {
+    margin-top: 10em;
+    margin: 0 auto;
+    display: inline-block;
+    animation: bounce 2s infinite;
+  }
+    /* @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        20% {
+            transform: translateY(-90px);
+        }
+        40% {
+            transform: translateY(-60px);
+        }
+        60% {
+            transform: translateY(-30px);
+        }
+        80% {
+            transform: translateY(-15px);
+        }
+    }  */
+
+/*------------- SHAKE effect avec CSS-----------------*/
+ .shake {
+    display: inline-block;
+    animation: shake 0.5s cubic-bezier(.36, 0.7, .19, .97) both infinite;
+}
+/* @keyframes shake {
+    10%, 90% { transform: translateX(-5px); }
+    20%, 80% { transform: translateX(10px); }
+    30%, 50%, 70% { transform: translateX(-20px); }
+    40%, 60% { transform: translateX(20px); }
+}  */
